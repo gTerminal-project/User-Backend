@@ -1,0 +1,89 @@
+{
+	"version":"0.0.2",
+	"langs":[
+		"de",
+		"en"
+	],
+	"names":[
+		"Deutsch",
+		"English"
+	],
+	"pack":{
+		"gTerminal.repoAddedSuccessfully": [
+			"Das Repository wurde erfolgreich hinzugefügt.",
+			"The repository has been added successfully."
+		],
+		"gTerminal.repoRemovedSuccessfully": [
+			"Das Repository wurde erfolgreich entfernt.",
+			"The repository has been removed successfully."
+		],
+		"gTerminal.moduleAddedSuccessfully": [
+			"Das Modul wurde erfolgreich hinzugefügt.",
+			"The module has been added successfully."
+		],
+		"gTerminal.moduleRemovedSuccessfully": [
+			"Das Modul wurde erfolgreich entfernt.",
+			"The module has been removed successfully."
+		],
+		"gTerminal.usernameChangedSuccessfully":[
+			"Ihr Benutzername wurde erfolgreich geändert. Sie müssen sich nun erneut anmelden.",
+			"Your username has been changed successfully. You’ll have to log in again."
+		],
+		"gTerminal.passwordChangedSuccessfully":[
+			"Ihr Passwort wurde erfolgreich geändert. Sie müssen sich nun erneut anmelden.",
+			"Your password has been changed successfully. You’ll have to log in again."
+		],
+		"gTerminal.accountDeletedSuccessfully":[
+			"Ihr Konto wurde erfolgreich gelöscht.",
+			"Your account has been deleted successfully."
+		],
+		"gTerminal.registeredSuccessfully":[
+			"Sie wurden erfolgreich registriert.",
+			"You have been registered successfully."
+		],
+		"gTerminal.authenticatedSucessfully":[
+			"Sie wurden erfolgreich authentifiziert.",
+			"You have been authenticated sucessfully."
+		],
+		"gTerminal.usernameAlreadyTaken":[
+			"Der Benutzername \"%s\" ist leider schon vergeben.",
+			"Sorry, the username \"%s\"is already taken."
+		],
+		"gTerminal.JWTRenewedSucessfully":[
+			"JWT wurde erfolgreich erneuert.",
+			"JWT has been renewed sucessfully."
+		],
+		"gTerminal.noLoginCredsGiven":[
+			"Es wurden keine Zugangsdaten angegeben.",
+			"No login credentials were given."
+		],
+		"gTerminal.loginCredsInvalid":[
+			"Ihre Zugangsdaten sind ungültig.",
+			"Your login credentials are invalid."
+		],
+		"gTerminal.noCmdGiven":[
+			"Es wurde kein Befehl angegeben.",
+			"No command was given."
+		],
+		"gTerminal.cmdInvalid":[
+			"Der Befehl ist ungültig.",
+			"The command is invalid."
+		],
+		"gTerminal.noParamsGiven": [
+			"Ein oder mehrere Parameter sind nicht angegeben.",
+			"One or more parameters are not given."
+		],
+		"gTerminal.usernameDoesntMatchRegex":[
+			"Ihr Benutzername besteht nicht nur aus Buchstaben, Zahlen und Bindestrichen.",
+			"Your username does not only contain letters, numbers and hyphens."
+		],
+		"gTerminal.passwordDoesntMatchRegex":[
+			"Ihr Passwort ist nicht mindestens 12 Zeichen lang und enthält nicht mindestens 3 Buchstaben, 3 Zahlen und 2 Sonderzeichen.",
+			"Your password is not at least 12 characters long and does not contain at least 3 letters, 3 number and 2 special characters."
+		],
+		"gTerminal.usernameAndPasswordDontMatchRegex":[
+			"Ihr Benutzername besteht nicht nur aus Buchstaben, Zahlen und Bindestrichen UND ihr Passwort ist nicht mindestens 12 Zeichen lang und enthält nicht mindestens 3 Buchstaben, 3 Zahlen und 2 Sonderzeichen.",
+			"Your username does not consist of only letters, numbers and hyphens AND your password is not at least 12 characters long and does not contain at least 3 letters, 3 numbers and 2 special characters."
+		]
+    }
+}

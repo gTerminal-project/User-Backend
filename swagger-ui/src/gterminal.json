@@ -1,0 +1,1000 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "gTerminal",
+    "description": "This is the official API documentation of the gTerminal user backend.",
+    "termsOfService": "",
+    "contact": {
+      "email": "gterminal@jojojux.de"
+    },
+    "license": {
+      "name": "GPL-3.0",
+      "url": "https://www.gnu.org/licenses/gpl-3.0-standalone.html"
+    },
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "gTerminal online",
+    "url": "https://terminal-center.github.io/"
+  },
+  "servers": [
+    {
+      "url": "https://gterminal.mintux.de/api.php"
+    }
+  ],
+  "tags": [
+    {
+      "name": "repo",
+      "description": "Repository management"
+    },
+    {
+      "name": "module",
+      "description": "Module management"
+    },
+    {
+      "name": "account",
+      "description": "Account management"
+    }
+  ],
+  "paths": {
+    "/repo/add": {
+      "post": {
+        "tags": [
+          "repo"
+        ],
+        "summary": "Add a repository.",
+        "description": "Add a repository.",
+        "operationId": "addRepo",
+        "requestBody": {
+          "description": "Add a repository.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/addRepo"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/addRepo"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/addRepoResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/resultError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/repo/remove": {
+      "post": {
+        "tags": [
+          "repo"
+        ],
+        "summary": "Remove a repository.",
+        "description": "Remove a repository.",
+        "operationId": "removeRepo",
+        "requestBody": {
+          "description": "Remove a repository.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/removeRepo"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/removeRepo"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/removeRepoResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/resultError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/repo/getAll": {
+      "get": {
+        "tags": [
+          "repo"
+        ],
+        "summary": "Get all repositories.",
+        "description": "Get all repositories.",
+        "operationId": "getAllRepositories",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "schema": {
+              "type": "string",
+              "example": ""
+            },
+            "description": "JWT"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/getReposResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/resultError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/module/add": {
+      "post": {
+        "tags": [
+          "module"
+        ],
+        "summary": "Add a module.",
+        "description": "Add a module.",
+        "operationId": "addModule",
+        "requestBody": {
+          "description": "Add a module.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/addModule"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/addModule"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/addModuleResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/resultError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/module/remove": {
+      "post": {
+        "tags": [
+          "module"
+        ],
+        "summary": "Remove a module.",
+        "description": "Remove a module.",
+        "operationId": "removeModule",
+        "requestBody": {
+          "description": "Remove a module.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/removeModule"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/removeModule"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/removeModuleResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/resultError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/module/getAll": {
+      "get": {
+        "tags": [
+          "module"
+        ],
+        "summary": "Get all Modules.",
+        "description": "Get all Modules.",
+        "operationId": "getAllModules",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "jwt",
+            "schema": {
+              "type": "string",
+              "example": ""
+            },
+            "description": "JWT"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/getModulesResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/resultError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/account/register": {
+      "post": {
+        "tags": [
+          "account"
+        ],
+        "summary": "Register an account.",
+        "description": "Register an account.",
+        "operationId": "registerAccount",
+        "requestBody": {
+          "description": "Register an account.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/registerAccount"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/registerAccount"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/registerAccountResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/resultError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/account/authenticate": {
+      "post": {
+        "tags": [
+          "account"
+        ],
+        "summary": "Authenticate an account.",
+        "description": "Authenticate an account.",
+        "operationId": "authenticateAccount",
+        "requestBody": {
+          "description": "Authenticate an account.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/authenticateAccount"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/authenticateAccount"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/authenticateAccountResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/resultError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/account/renewJWT": {
+      "post": {
+        "tags": [
+          "account"
+        ],
+        "summary": "Renew JWT.",
+        "description": "Renew JWT.",
+        "operationId": "renewJWTAccount",
+        "requestBody": {
+          "description": "Renew JWT.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/renewJWTAccount"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/renewJWTAccount"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/renewJWTAccountResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/resultError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/account/changeUsername": {
+      "post": {
+        "tags": [
+          "account"
+        ],
+        "summary": "Change your username.",
+        "description": "Change your username.",
+        "operationId": "changeUsername",
+        "requestBody": {
+          "description": "Change your username.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/changeUsernameAccount"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/changeUsernameAccount"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/changeUsernameAccountResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/resultError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/account/changePassword": {
+      "post": {
+        "tags": [
+          "account"
+        ],
+        "summary": "Change your password.",
+        "description": "Change your password.",
+        "operationId": "changePassword",
+        "requestBody": {
+          "description": "Change your password.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/changePasswordAccount"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/changePasswordAccount"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/changePasswordAccountResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/resultError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/account/delete": {
+      "post": {
+        "tags": [
+          "account"
+        ],
+        "summary": "Delete your account.",
+        "description": "Delete your account.",
+        "operationId": "deleteAccount",
+        "requestBody": {
+          "description": "Delete your account.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/deleteAccount"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/deleteAccount"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/deleteAccountResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/resultError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/account/isUsernameAvailable": {
+      "post": {
+        "tags": [
+          "account"
+        ],
+        "summary": "Check if a username is available.",
+        "description": "Check if a username is available.",
+        "operationId": "isUsernameAvailable",
+        "requestBody": {
+          "description": "Check if a username is available.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/isUsernameAvailableAccount"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/isUsernameAvailableAccount"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/isUsernameAvailableAccountResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/resultError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "addRepo": {
+        "type": "object",
+        "properties": {
+          "jwt": {
+            "type": "string",
+            "example": ""
+          },
+          "repo": {
+            "type": "string",
+            "example": "https://raw.githubusercontent.com/terminal-center/terminal/main/module/repo.json"
+          }
+        }
+      },
+      "removeRepo": {
+        "type": "object",
+        "properties": {
+          "jwt": {
+            "type": "string",
+            "example": ""
+          },
+          "repo": {
+            "type": "string",
+            "example": "https://raw.githubusercontent.com/terminal-center/terminal/main/module/repo.json"
+          }
+        }
+      },
+      "addModule": {
+        "type": "object",
+        "properties": {
+          "jwt": {
+            "type": "string",
+            "example": ""
+          },
+          "module": {
+            "type": "string",
+            "example": "https://raw.githubusercontent.com/terminal-center/terminal/main/module/github.js"
+          }
+        }
+      },
+      "removeModule": {
+        "type": "object",
+        "properties": {
+          "jwt": {
+            "type": "string",
+            "example": ""
+          },
+          "module": {
+            "type": "string",
+            "example": "https://raw.githubusercontent.com/terminal-center/terminal/main/module/github.js"
+          }
+        }
+      },
+      "registerAccount": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "johndoe"
+          },
+          "password": {
+            "type": "string",
+            "format": "password",
+            "example": "MySecurePassword"
+          }
+        }
+      },
+      "authenticateAccount": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "johndoe"
+          },
+          "password": {
+            "type": "string",
+            "format": "password",
+            "example": "MySecurePassword"
+          }
+        }
+      },
+      "renewJWTAccount": {
+        "type": "object",
+        "properties": {
+          "jwt": {
+            "type": "string",
+            "example": ""
+          }
+        }
+      },
+      "changeUsernameAccount": {
+        "type": "object",
+        "properties": {
+          "jwt": {
+            "type": "string",
+            "example": ""
+          },
+          "newUsername": {
+            "type": "string",
+            "example": "johnny"
+          }
+        }
+      },
+      "changePasswordAccount": {
+        "type": "object",
+        "properties": {
+          "jwt": {
+            "type": "string",
+            "example": ""
+          },
+          "password": {
+            "type": "string",
+            "format": "password",
+            "example": "MySecurePassword"
+          },
+          "newPassword": {
+            "type": "string",
+            "example": "MyNewPassword"
+          }
+        }
+      },
+      "deleteAccount": {
+        "type": "object",
+        "properties": {
+          "jwt": {
+            "type": "string",
+            "example": ""
+          },
+          "password": {
+            "type": "string",
+            "format": "password",
+            "example": "MySecurePassword"
+          }
+        }
+      },
+      "isUsernameAvailableAccount": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "johndoe"
+          }
+        }
+      },
+      "addRepoResult": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "example": "The repository has been added successfully."
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "removeRepoResult": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "example": "The repository has been removed successfully."
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "getReposResult": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "array",
+            "example": ["https://raw.githubusercontent.com/terminal-center/terminal/main/module/repo.json"]
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "addModuleResult": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "example": "The module has been added successfully."
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "removeModuleResult": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "example": "The module has been removed successfully."
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "getModulesResult": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "array",
+            "example": ["https://raw.githubusercontent.com/terminal-center/terminal/main/module/github.js"]
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "registerAccountResult": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "example": "You have been registered successfully."
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "authenticateAccountResult": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "example": "You have been authenticated successfully."
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "renewJWTAccountResult": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "example": "Your JWT has been renewed successfully."
+          },
+          "jwt": {
+            "type": "string",
+            "example": ""
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "changeUsernameAccountResult": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "example": "Your username has been changed successfully. You’ll have to log in again."
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "changePasswordAccountResult": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "example": "Your password has been changed successfully. You’ll have to log in again."
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "deleteAccountResult": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "example": "Your account has been deleted successfully."
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "isUsernameAvailableAccountResult": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "boolean",
+            "example": true
+          },
+          "success": {
+            "type": "boolean",
+            "example": true
+          }
+        }
+      },
+      "resultError": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "example": "No command was given."
+          },
+          "success": {
+            "type": "boolean",
+            "example": false
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "jwt": {
+        "type": "apiKey",
+        "in": "query",
+        "name": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "jwt": []
+    }
+  ]
+}
