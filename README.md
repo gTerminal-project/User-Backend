@@ -8,3 +8,6 @@
 3. Then put all the files (except the `README.md` and `LICENCE`) in your webroot
 4. Edit the `$GLOBALS['']` variables in `api.php` such as `$GLOBALS['host']` (the domain where the api is hosted), `$GLOBALS['mySQLHost']`, `$GLOBALS['mySQLUsername']` and `$GLOBALS['mySQLPassword']`.
 5. If you want you can also edit the username and password regex defaults.
+
+#### API documentation
+The API documentation is available at `/swagger-ui/`
